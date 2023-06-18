@@ -1,7 +1,8 @@
 .sidebar {
-    
+	width: 500px;
+	background-color: "#2c3f47";
 	height: 100vh;
-    border-right: 1px solid white;
+	border-right: 1px solid white;
 	background-color: #2c3f47;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	transition: transform 0.2s ease-in-out;
@@ -22,7 +23,7 @@
 .sidebar .toggle-btn {
 	margin-top: 8px;
 	padding: 8px;
-    color: white;
+	color: white;
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
