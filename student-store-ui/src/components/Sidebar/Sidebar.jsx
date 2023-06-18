@@ -11,10 +11,7 @@ export default function Sidebar() {
 	}
 
 	return (
-		<aside
-			className={`sidebar ${isOpen ? "open" : ""}`}
-			style={{ width: 500, backgroundColor: "#2c3f47" }} // setting width in css file did not work
-		>
+		<aside className={`sidebar ${isOpen ? "open" : ""}`}>
 			<div className="toggle-btn" onClick={handleToggle}>
 				{isOpen ? <p>Close</p> : <AiOutlineArrowRight />}
 			</div>
