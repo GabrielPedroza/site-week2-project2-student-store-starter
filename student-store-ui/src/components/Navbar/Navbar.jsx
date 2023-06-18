@@ -1,10 +1,24 @@
-import * as React from "react"
+import React from "react"
+import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 export default function Navbar() {
-  return (
-    <nav className="navbar">
-      <p>Navbar</p>
-    </nav>
-  )
+	return (
+		<nav className="navbar">
+			<Link to="/" className="navbar-brand">
+				College of CodePath
+			</Link>
+			<div className="navbar-links">
+				<Link to="/" className="navbar-link">
+					Home
+				</Link>
+				<Link to="/about" className="navbar-link">
+					About
+				</Link>
+				<Link to="/contact" className="navbar-link">
+					Contact
+				</Link>
+			</div>
+		</nav>
+	)
 }
