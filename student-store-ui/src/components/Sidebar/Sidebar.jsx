@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { MdOutlineAddShoppingCart } from "react-icons/md"
 import { AiOutlineArrowRight } from "react-icons/ai"
+import { AiOutlineArrowLeft } from "react-icons/ai"
 import "./Sidebar.css"
 
 export default function Sidebar() {
@@ -13,7 +14,7 @@ export default function Sidebar() {
 	return (
 		<aside className={`sidebar ${isOpen ? "open" : ""}`}>
 			<div className="toggle-btn" onClick={handleToggle}>
-				{isOpen ? <p>Close</p> : <AiOutlineArrowRight />}
+				{isOpen ? <AiOutlineArrowLeft className="arrow" /> : <AiOutlineArrowRight className="arrow" />}
 			</div>
 			<div>
 				<div>

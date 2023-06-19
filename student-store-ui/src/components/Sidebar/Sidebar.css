@@ -41,6 +41,14 @@
 	transform: translateX(-250px);
 }
 
+.arrow {
+    position: relative;
+    top: -7px;
+    left: -5px;
+    width: 36px;
+    height: 36px;
+}
+
 .sidebar .toggle-btn p {
 	margin: 0;
 	font-size: 14px;
