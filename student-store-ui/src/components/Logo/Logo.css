@@ -1,4 +1,4 @@
-.logo img {
+.nav-logo img {
 	position: relative;
 	margin-left: 10rem;
 	right: -70px;
@@ -6,8 +6,10 @@
 	height: 40px;
 }
 
-@media (max-width: 768px) {
-	.logo {
+@media (max-width: 1290px) {
+	.nav-logo {
+        position: relative;
+        left: -150px;
 		margin-left: 0;
 	}
 }
