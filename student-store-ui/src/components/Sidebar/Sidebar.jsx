@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { MdOutlineAddShoppingCart } from "react-icons/md"
-import { AiOutlineArrowRight } from "react-icons/ai"
-import { AiOutlineArrowLeft } from "react-icons/ai"
+import { MdOutlineAddShoppingCart, MdAddShoppingCart } from "react-icons/md"
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
+import { BsCashCoin, BsCreditCard } from "react-icons/bs"
 import "./Sidebar.css"
 
 export default function Sidebar() {
@@ -16,10 +16,10 @@ export default function Sidebar() {
 			<div className="toggle-btn" onClick={handleToggle}>
 				{isOpen ? <AiOutlineArrowLeft className="arrow" /> : <AiOutlineArrowRight className="arrow" />}
 			</div>
-			<div>
-				<div>
-					<MdOutlineAddShoppingCart />
-				</div>
+			<div className={`sidebar-icons ${isOpen ? "open" : ""}`}>
+				<MdAddShoppingCart className="sidebar-icon" onClick={handleToggle}/>
+				<BsCashCoin className="sidebar-icon" onClick={handleToggle}/>
+				<BsCreditCard className="sidebar-icon" onClick={handleToggle}/>
 			</div>
 			<div className="sidebar-content">
 				<h2>Menu</h2>
