@@ -23,7 +23,10 @@ export default function Home({ products }) {
 									<HiOutlineMinus className="sign minus" />
 								</div>
 							</div>
-							<p>{product.price}</p>
+								<p className="product-price">{formatPrice(product.price)}</p>
+								<div className="stars">
+									<img src="/stars.png" alt="stars" />
+								</div>
 						</div>
 					))
 				) : (
@@ -37,3 +40,8 @@ export default function Home({ products }) {
 		</div>
 	)
 }
+
+function formatPrice(price) {
+	const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2);
+	return `$${formattedPrice}`;
+  }

@@ -10,6 +10,7 @@
 }
 
 .product-name-count p {
+	white-space: nowrap;
 	font-size: 1.1rem;
 	position: relative;
 	margin-left: 0.25rem;
@@ -25,11 +26,25 @@
 	margin-right: 0.5rem;
 }
 
+.stars img {
+	position: relative;
+	top: -70px;
+	margin-left: 0.2rem;
+	left: -58px;
+	scale: 0.5;
+}
+
 .sign {
 	font-size: 1.7rem;
 	padding: 0.3rem;
 	transition: 0.1s;
 	cursor: pointer;
+}
+
+.product-price {
+	margin-left: 0.5rem;
+	position: relative;
+	bottom: -10px;
 }
 
 .plus:hover {
@@ -60,10 +75,16 @@
 
 .product-item {
 	width: 240px;
+	height: 400px;
 	object-fit: cover;
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: 0.15s;
+}
+
+.product-item:hover {
+	scale: 1.05;
 }
 
 .product-item img {
