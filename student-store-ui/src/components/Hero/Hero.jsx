@@ -2,7 +2,7 @@ import "./Hero.css"
 
 export default function Hero() {
 	return (
-		<div className="hero">
+		<nav className="hero">
 			<div className="hero-container">
 				<div className="hero-intro">
 					Welcome!
@@ -16,6 +16,6 @@ export default function Hero() {
 				</p>
 			</div>
 			<img className="hero-image" src="/hero-img.png" alt="logo" />
-		</div>
+		</nav>
 	)
 }
