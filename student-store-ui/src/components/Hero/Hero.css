@@ -1,0 +1,52 @@
+.hero {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #02c385;
+	padding: 2rem 3rem;
+    padding-right: 9rem;
+	color: white;
+}
+
+.hero-container {
+	padding: 20px;
+	max-width: 800px;
+}
+
+.hero-intro {
+	font-size: 4rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.hero-desc {
+	max-width: 60ch;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.hero-image {
+	width: 125px;
+	height: 125px;
+	margin-top: 20px;
+    margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+	.hero {
+		padding: 10px;
+	}
+
+	.hero-container {
+		max-width: 100%;
+	}
+
+	.hero-intro {
+		font-size: 3rem;
+	}
+
+	.hero-desc {
+		font-size: 18px;
+	}
+}
