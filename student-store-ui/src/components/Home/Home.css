@@ -4,7 +4,6 @@
 	min-width: 500px;
 }
 
-
 .loading-spinner {
 	display: flex;
 	justify-content: center;
@@ -15,6 +14,25 @@
 .spinner {
 	animation: spin 1s infinite linear;
 	font-size: 3rem; /* Adjust the size as needed */
+}
+
+.product-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.product-item {
+	flex: 0 0 calc(33.33% - 20px);
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  width: 150px;
+  height: 150px;
 }
 
 @keyframes spin {
