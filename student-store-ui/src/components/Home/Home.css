@@ -3,3 +3,22 @@
 	max-width: 1100px;
 	min-width: 500px;
 }
+
+
+.loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px; /* Adjust the height as needed */
+}
+
+.spinner {
+	animation: spin 1s infinite linear;
+	font-size: 3rem; /* Adjust the size as needed */
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
