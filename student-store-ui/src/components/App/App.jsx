@@ -36,12 +36,88 @@ export default function App() {
 		fetchData()
 	}, [])
 
+	const handleOnToggle = () => {
+		setIsOpen(!isOpen)
+	}
+
+	const handleAddItemToCart = productId => {
+		const existingItem = shoppingCart.find(
+			item => item.itemId === productId
+		)
+
+		if (existingItem) {
+			const updatedCart = shoppingCart.map(item =>
+				item.itemId === productId
+					? { ...item, quantity: item.quantity + 1 }
+					: item
+			)
+			setShoppingCart(updatedCart)
+		} else {
+			const product = products.find(item => item.id === productId)
+			const newItem = {
+				itemId: productId,
+				quantity: 1,
+				price: product.price,
+			}
+			setShoppingCart([...shoppingCart, newItem])
+		}
+	}
+
+	const handleRemoveItemFromCart = productId => {
+		const existingItem = shoppingCart.find(
+			item => item.itemId === productId
+		)
+
+		if (existingItem) {
+			let updatedCart = []
+			if (existingItem.quantity > 1) {
+				updatedCart = shoppingCart.map(item =>
+					item.itemId === productId
+						? { ...item, quantity: item.quantity - 1 }
+						: item
+				)
+			} else {
+				updatedCart = shoppingCart.filter(
+					item => item.itemId !== productId
+				)
+			}
+			setShoppingCart(updatedCart)
+		}
+	}
+
+	const handleOnCheckoutFormChange = (name, value) => {
+		setCheckoutForm(prevForm => ({
+			...prevForm,
+			[name]: value,
+		}))
+	}
+
+	const handleOnSubmitCheckoutForm = async () => {
+		const order = {
+			user: {
+				name: checkoutForm.name,
+				email: checkoutForm.email,
+			},
+			shoppingCart: shoppingCart.map(({ itemId, quantity }) => ({
+				itemId,
+				quantity,
+			})),
+		}
+
+		try {
+			const response = await axios.post("/store", order)
+			// Handle successful submission (e.g., show confirmation message)
+		} catch (error) {
+			// Handle error (e.g., display error message)
+		}
+	}
+
 	return (
 		<div className="app">
 			<Router>
 				<Navbar />
+				<Sidebar isOpen={isOpen} />
 				<div className="content">
-					<Sidebar isOpen={isOpen} />
 					<Routes>
 						<Route
 							path="/"
