@@ -10,7 +10,8 @@ export default function Home({ products }) {
 	return (
 		<div className="home">
 			<Hero />
-			<p>home</p>
+			<p>search bar goes here</p>
+			<h3>Best Selling Products</h3>
 			<div className="product-grid">
 				{products.products ? (
 					products.products.map(product => (
