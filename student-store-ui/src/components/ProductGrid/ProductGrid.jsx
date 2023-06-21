@@ -6,7 +6,7 @@ import "./ProductGrid.css"
 const ProductGrid = ({ products }) => {
   return (
     <>
-        <h3>Best Selling Products</h3>
+        <h3 className='product-header'>Best Selling Products</h3>
         <div className="product-grid">
             {products.products ? (
                 products.products.map(product => (

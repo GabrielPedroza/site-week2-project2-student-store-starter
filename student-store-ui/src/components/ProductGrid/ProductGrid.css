@@ -11,6 +11,10 @@
 	top: -10px;
 }
 
+.product-header {
+    margin-top: 6rem;
+}
+
 .product-name-count div {
 	display: flex;
 	position: relative;
