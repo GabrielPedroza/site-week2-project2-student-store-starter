@@ -5,13 +5,14 @@ import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
 import ProductGrid from "../ProductGrid/ProductGrid"
+import Search from "../Search/Search"
 
 export default function Home({ products }) {
 	return (
 		<div className="home">
 			<Hero />
-			<p>search bar goes here</p>
-			<ProductGrid products={products}/>
+			<Search />
+			<ProductGrid products={products} />
 			<About />
 			<Contact />
 			<Footer />
