@@ -58,7 +58,7 @@ const Footer = () => {
               <div>
                   <p>Facebook</p>
                   <p>Twitter</p>
-                  <p>pnkedin</p>
+                  <p>Linkedin</p>
                   <p>Instagram</p>
                   <p>Youtube</p>
               </div>
