@@ -5,19 +5,12 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 // import ProductDetail from "../ProductDetail/ProductDetail";
-// import NotFound from "../NotFound/NotFound";
 import "./App.css"
+import NotFound from "../NotFound/NotFound"
 
 export default function App() {
 	const [products, setProducts] = useState([])
 	const [isFetching, setIsFetching] = useState(true)
-	const [error, setError] = useState(null)
-	const [isOpen, setIsOpen] = useState(false)
-	const [shoppingCart, setShoppingCart] = useState([])
-	const [checkoutForm, setCheckoutForm] = useState({
-		name: "",
-		email: "",
-	})
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -28,7 +21,7 @@ export default function App() {
 				setProducts(response.data)
 				setIsFetching(false)
 			} catch (error) {
-				setError("Error fetching products")
+				console.error('Error fetching products')
 				setIsFetching(false)
 			}
 		}
@@ -40,24 +33,23 @@ export default function App() {
 		<div className="app">
 			<Router>
 				<Navbar />
-				<Sidebar isOpen={isOpen} />
+				<Sidebar />
 				<div className="content">
 					<Routes>
 						<Route
 							path="/"
-							element={<Home products={products} />}
+							element={<Home products={products} isFetching={isFetching} />}
 						/>
-						<Route
+						{/* <Route
 							path="/products/:productId"
 							element={
-								// <ProductDetail
-								// 	products={products}
-								// 	onAddToCart={handleAddItemToCart}
-								// />
-								products
+								<ProductDetail
+									products={products}
+									onAddToCart={handleAddItemToCart}
+								/>
 							}
-						/>
-						{/* <Route path="*" element={<NotFound />} /> */}
+						/> */}
+						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</div>
 			</Router>
