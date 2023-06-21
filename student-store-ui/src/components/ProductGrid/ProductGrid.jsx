@@ -4,12 +4,12 @@ import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
 import "./ProductGrid.css"
 import ProductCard from '../ProductCard/ProductCard'
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ products, isFetching }) => {
   return (
     <>
         <h3 className='product-header'>Best Selling Products</h3>
         <div className="product-grid">
-            {products.products ? (
+            {!isFetching ? (
                 products.products.map((product, i) => (
                     <ProductCard product={product} key={i} />
                 ))

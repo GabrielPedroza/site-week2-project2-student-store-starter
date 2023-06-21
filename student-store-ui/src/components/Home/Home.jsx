@@ -7,12 +7,13 @@ import Footer from "../Footer/Footer"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import Search from "../Search/Search"
 
-export default function Home({ products }) {
+export default function Home({ products, isFetching }) {
+
 	return (
 		<div className="home">
 			<Hero />
 			<Search />
-			<ProductGrid products={products} />
+			<ProductGrid products={products} isFetching={isFetching} />
 			<About />
 			<Contact />
 			<Footer />
