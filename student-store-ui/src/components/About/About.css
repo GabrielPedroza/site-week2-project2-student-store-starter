@@ -5,6 +5,10 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  .about-header {
+    margin-top: 6rem;
+  }
   
   .about-desc {
     color: #5b5b5b;
