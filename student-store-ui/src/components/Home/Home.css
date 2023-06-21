@@ -7,3 +7,9 @@
 .home h3 {
 	font-size: 1.5rem;
 }
+
+@media screen and (max-width: 1130px) {
+	.home {
+		margin-left: 3.75rem;
+	}
+}
