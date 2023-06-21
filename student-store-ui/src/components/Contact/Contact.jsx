@@ -17,7 +17,7 @@ const Contact = () => {
           <p>code@path.org</p>
           <p>1-800-CODEPATH</p>
           <p>123 Fake Street, San Francisco, CA</p>
-          <div>
+          <div className="contact-icons">
             <FaFacebook className="contact-value-item" />
             <FaInstagram className="contact-value-item" />
             <FaTwitter className="contact-value-item" />
