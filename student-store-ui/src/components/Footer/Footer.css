@@ -1,0 +1,42 @@
+.footer {
+    position: relative;
+    margin-top: 6rem;
+    background-color: white;
+    display: flex;
+    border-bottom: 1px solid gray;
+    gap: 100px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.footer-wrapper {
+    position: absolute;
+    top: 0;
+    left: -290px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 150vw;
+    height: 150%;
+    background-color: white;
+}
+
+.footer-stores {
+    width: 100px;
+}
+
+.footer-payments {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 200px;
+
+}
+
+@media screen and (max-width: 1245px) {
+    .footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
