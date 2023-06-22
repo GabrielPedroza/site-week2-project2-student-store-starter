@@ -23,15 +23,15 @@ export default function Navbar() {
 				<Link to="/" className="nav-link">
 					Home
 				</Link>
-				<Link to="/about" className="nav-link">
+				<a href="#about" className="nav-link">
 					About
-				</Link>
-				<Link to="/contact" className="nav-link">
+				</a>
+				<a href="#contact" className="nav-link">
 					Contact
-				</Link>
-				<Link to="/contact" className="nav-link">
+				</a>
+				<a href="#buy" className="nav-link">
 					Buy now
-				</Link>
+				</a>
 			</div>
 		</nav>
 	)

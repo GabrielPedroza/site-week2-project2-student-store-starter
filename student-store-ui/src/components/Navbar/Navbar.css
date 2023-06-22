@@ -33,6 +33,7 @@
 	color: #fff;
 	font-size: 1rem;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .nav-link:hover {

@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 const Contact = () => {
   return (
     <>
-    <h3 className="contact-header">Contact Us</h3>
+    <h3 id="contact" className="contact-header">Contact Us</h3>
     <div className="contact-container">
       <div className="contact-info">
         <div className="contact-key">
