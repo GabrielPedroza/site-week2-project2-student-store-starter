@@ -35,6 +35,7 @@ const Search = () => {
     <div className="search-bar">
       <div className="search-container">
         <input
+        className="search-input"
           type="text"
           placeholder="Search for a product..."
           value={searchTerm}
@@ -43,7 +44,7 @@ const Search = () => {
       </div>
       <div className={`filter-categories ${categoriesVisible ? "visible" : "hidden"}`}>
         <div onClick={toggleCategoriesVisibility} className="toggle-button">
-          <GrMenu />
+          <GrMenu className="search-menu" />
         </div>
         {categoriesVisible && (
           <div className="search-categories">
