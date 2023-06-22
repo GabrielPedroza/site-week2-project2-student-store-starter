@@ -10,7 +10,7 @@ import "./App.css"
 import NotFound from "../NotFound/NotFound"
 
 export default function App() {
-	const { products, setFetchedProducts } = useContext(ProductContext)
+	const { setFetchedProducts, filteredProducts, setFilteredProducts } = useContext(ProductContext)
 	const [isFetching, setIsFetching] = useState(true)
 
 	useEffect(() => {
@@ -20,6 +20,7 @@ export default function App() {
 					"https://codepath-store-api.herokuapp.com/store"
 				)
 				setFetchedProducts(response.data)
+				setFilteredProducts(response.data)
 				setIsFetching(false)
 			} catch (error) {
 				console.error('Error fetching products')
@@ -39,7 +40,7 @@ export default function App() {
 					<Routes>
 						<Route
 							path="/"
-							element={<Home products={products} isFetching={isFetching} />}
+							element={<Home products={filteredProducts} isFetching={isFetching} />}
 						/>
 						{/* <Route
 							path="/products/:productId"
