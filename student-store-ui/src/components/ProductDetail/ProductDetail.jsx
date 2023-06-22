@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../state/ProductContext";
+import { AiOutlineLoading } from "react-icons/ai"
 import "./ProductDetail.css";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 
@@ -11,7 +12,9 @@ const ProductDetail = () => {
   const product = products.products.find((product) => product.id == productId);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return <div className="loading-spinner">
+            <AiOutlineLoading className="spinner" />
+           </div>;
   }
 
   return (
@@ -19,14 +22,14 @@ const ProductDetail = () => {
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
-      <p className="pd-price">Price: {formatPrice(product.price)}</p>
-      <div>
+      <div className="pd-signs">
         <HiOutlinePlus className="pd-sign pd-plus" onClick={() => addToCart(product)}/>
         <HiOutlineMinus className="pd-sign pd-minus" onClick={() => removeFromCart(product.id)} />
     </div>
     <div className="pd-stars">
         <img src="/stars.png" alt="stars" />
     </div>
+    <p className="pd-price">Price: {formatPrice(product.price)}</p>
     </div>
   );
 };

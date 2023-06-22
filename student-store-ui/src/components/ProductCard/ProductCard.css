@@ -2,3 +2,26 @@
     position: relative;
     top: -5px;
 }
+
+.sign {
+	font-size: 1.7rem;
+	padding: 0.3rem;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+.plus:hover {
+	color: green;
+}
+
+.minus:hover {
+	color: red;
+}
+
+.stars img {
+	position: relative;
+	top: -70px;
+	margin-left: 0.2rem;
+	left: -58px;
+	scale: 0.5;
+}

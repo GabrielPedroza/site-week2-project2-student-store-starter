@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiOutlineLoading } from "react-icons/ai"
-import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
 import "./ProductGrid.css"
 import ProductCard from '../ProductCard/ProductCard'
 
