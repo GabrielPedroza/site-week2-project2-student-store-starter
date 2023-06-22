@@ -5,6 +5,7 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([])
 
   const setFetchedProducts = (fetchedProducts) => {
     setProducts(fetchedProducts);
@@ -33,11 +34,14 @@ export const ProductProvider = ({ children }) => {
   };
 
   const contextValues = {
+    filteredProducts,
     products,
     cartItems,
     setFetchedProducts,
     addToCart,
-    removeFromCart
+    setProducts,
+    removeFromCart,
+    setFilteredProducts
   };
 
   return (
