@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdFactCheck } from "react-icons/md";
 import "./CheckoutForm.css"
+import Confetti from "../../utils/Confetti";
 
 const CheckoutForm = () => {
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ const CheckoutForm = () => {
 
     if (!name || !email) {
       setErrorMessage("Please fill out the name and email fields.");
+      return
     } else {
       // Perform checkout logic here
       setErrorMessage("");
@@ -32,6 +34,7 @@ const CheckoutForm = () => {
     }
 
     // Perform checkout logic here...
+    Confetti();
 
     setName("");
     setEmail("");
