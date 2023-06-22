@@ -4,7 +4,7 @@ import axios from "axios"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
-// import ProductDetail from "../ProductDetail/ProductDetail";
+import ProductDetail from "../ProductDetail/ProductDetail";
 import { ProductContext } from "../../state/ProductContext"
 import "./App.css"
 import NotFound from "../NotFound/NotFound"
@@ -42,15 +42,14 @@ export default function App() {
 							path="/"
 							element={<Home products={filteredProducts} isFetching={isFetching} />}
 						/>
-						{/* <Route
+						<Route
 							path="/products/:productId"
 							element={
 								<ProductDetail
-									products={products}
-									onAddToCart={handleAddItemToCart}
+									products={filteredProducts}
 								/>
 							}
-						/> */}
+						/>
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</div>

@@ -14,10 +14,12 @@
 	position: fixed;
 	left: -440px;
 	top: 0;
+	overflow-y: hidden;
 }
 
 .sidebar.open {
 	transform: translateX(440px);
+	overflow-y: scroll;
 }
 
 .sidebar .toggle-btn {
