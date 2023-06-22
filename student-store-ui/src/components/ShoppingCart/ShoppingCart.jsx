@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./ShoppingCart.css";
 import { ProductContext } from "../../state/ProductContext";
+import { RiMoneyDollarCircleLine } from "react-icons/ri"
 import { formatPrice } from "../ProductCard/ProductCard";
 
 const ShoppingCart = () => {
@@ -51,8 +52,9 @@ const ShoppingCart = () => {
           </tfoot>
         </table>
       )}
-      <div>
+      <div className="payment-wrapper">
         <h3 className="payment-info">Payment Info</h3>
+        <RiMoneyDollarCircleLine className="payment-icon" />
       </div>
     </div>
   );
