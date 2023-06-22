@@ -5,7 +5,7 @@ import "./Search.css";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [categoriesVisible, setCategoriesVisible] = useState(true);
+  const [categoriesVisible, setCategoriesVisible] = useState(false);
 
   const { products, setFilteredProducts } = useContext(ProductContext);
 
