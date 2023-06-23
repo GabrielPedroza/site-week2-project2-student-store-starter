@@ -10,6 +10,8 @@ Check out our [deployed Student Store](https://codepath-student-store-demo.surge
 - Add several products to the shopping cart.
 - Checkout and view the final receipt.
 
+![Project Gif](/student-store-ui/public/project.gif)
+
 ## *Week 2* Application Features
 
 ### Core Features
