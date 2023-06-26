@@ -16,14 +16,13 @@ export default function App() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get(
-					"https://codepath-store-api.herokuapp.com/store"
-				)
+				const response = await axios.get("http://localhost:3001/store");
 				setFetchedProducts(response.data)
 				setFilteredProducts(response.data)
 				setIsFetching(false)
 			} catch (error) {
-				console.error('Error fetching products')
+				// console.error('Error fetching products')
+				console.log(error);
 				setIsFetching(false)
 			}
 		}
