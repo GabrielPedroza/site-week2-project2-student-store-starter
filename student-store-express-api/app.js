@@ -11,14 +11,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-app.use(cors());
-
 app.use(cors({
   origin: "http://localhost:3000"
 }));
 
 // Routes
 app.use("/store", require("./routes/store"));
-
+app.use("/products", require("./routes/products"));
 
 module.exports = app;
