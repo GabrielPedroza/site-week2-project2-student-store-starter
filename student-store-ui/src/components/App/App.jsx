@@ -21,7 +21,6 @@ export default function App() {
 				setFilteredProducts(response.data)
 				setIsFetching(false)
 			} catch (error) {
-				// console.error('Error fetching products')
 				console.log(error);
 				setIsFetching(false)
 			}
