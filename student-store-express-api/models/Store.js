@@ -10,7 +10,7 @@ class Store {
   }
 
   getProductById(productId) {
-    return this.data.products.find((product) => product.id === productId);
+    return this.data.products.find((product) => product.id === +productId);
   }
 
   createPurchaseOrder(shoppingCart, user) {
