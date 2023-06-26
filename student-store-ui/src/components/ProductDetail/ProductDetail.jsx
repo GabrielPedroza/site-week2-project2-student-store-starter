@@ -8,17 +8,17 @@ import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const { products, addToCart, removeFromCart } = useContext(ProductContext);
-  const [product, setProduct] = useState(null); // Add a state to hold the fetched product
+  const { addToCart, removeFromCart } = useContext(ProductContext);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:3001/products/${productId}`);
-        setProduct(response.data.product); // Set the fetched product in the state
+        setProduct(response.data.product);
       } catch (error) {
         console.log(error);
-        setProduct("could not fetch product"); // Set an error message if the product couldn't be fetched
+        setProduct("could not fetch product");
       }
     };
 
