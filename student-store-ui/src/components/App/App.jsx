@@ -8,6 +8,8 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import { ProductContext } from "../../state/ProductContext"
 import "./App.css"
 import NotFound from "../NotFound/NotFound"
+import Purchases from "../Puchases/Purchases"
+import PurchaseID from "../PuchaseID/PurchaseID"
 
 export default function App() {
 	const { setFetchedProducts, filteredProducts, setFilteredProducts } = useContext(ProductContext)
@@ -46,6 +48,13 @@ export default function App() {
 								<ProductDetail
 									products={filteredProducts}
 								/>
+							}
+						/>
+						<Route path="/purchases" element={<Purchases />} />
+						<Route
+							path="/purchases/:purchasesId"
+							element={
+								<PurchaseID />
 							}
 						/>
 						<Route path="*" element={<NotFound />} />
