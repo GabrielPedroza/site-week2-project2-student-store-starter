@@ -2,9 +2,11 @@ import React, { useState } from "react"
 import { MdAddShoppingCart } from "react-icons/md"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 import { BsCashCoin, BsCreditCard } from "react-icons/bs"
+import { BiPurchaseTag } from 'react-icons/bi'
 import "./Sidebar.css"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
+import { Link } from "react-router-dom"
 
 export default function Sidebar() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -22,6 +24,9 @@ export default function Sidebar() {
 				<MdAddShoppingCart className="sidebar-icon" onClick={handleToggle}/>
 				<BsCashCoin className="sidebar-icon" onClick={handleToggle}/>
 				<BsCreditCard className="sidebar-icon" onClick={handleToggle}/>
+				<Link to={'/purchases'} style={{ textDecoration: "none", color: "inherit" }}>
+					<BiPurchaseTag className="sidebar-icon purchase" />
+				</Link>
 			</div>
 			<div className="sidebar-content">
 				<ShoppingCart />
