@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.selected {
+  background-color: gray;
+}
+
 .filter-categories {
   position: relative;
   display: flex;

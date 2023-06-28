@@ -5,6 +5,7 @@ import "./Search.css";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [categoriesVisible, setCategoriesVisible] = useState(false);
 
   const { products, setFilteredProducts } = useContext(ProductContext);
@@ -14,17 +15,23 @@ const Search = () => {
     const filteredProducts = products.products.filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  
+
     // Update the products in the context
-    setFilteredProducts({products: filteredProducts});
+    setFilteredProducts({ products: filteredProducts });
   };
-  
+
   const handleFilter = (category) => {
     const filteredProducts = products.products.filter((product) =>
       category === "all" ? true : product.category === category
     );
-  
-    setFilteredProducts({products: filteredProducts});
+
+    setFilteredProducts({ products: filteredProducts });
+
+    if (selectedCategory === category) {
+      setSelectedCategory(null); // Deselect the category if it's clicked again
+    } else {
+      setSelectedCategory(category);
+    }
   };
 
   const toggleCategoriesVisibility = () => {
@@ -35,7 +42,7 @@ const Search = () => {
     <div className="search-bar">
       <div className="search-container">
         <input
-        className="search-input"
+          className="search-input"
           type="text"
           placeholder="Search for a product..."
           value={searchTerm}
@@ -48,11 +55,36 @@ const Search = () => {
         </div>
         {categoriesVisible && (
           <div className="search-categories">
-            <p onClick={() => handleFilter("all")}>All Categories</p>
-            <p onClick={() => handleFilter("clothing")}>Clothing</p>
-            <p onClick={() => handleFilter("food")}>Food</p>
-            <p onClick={() => handleFilter("accessories")}>Accessories</p>
-            <p onClick={() => handleFilter("tech")}>Tech</p>
+            <p
+              onClick={() => handleFilter("all")}
+              className={selectedCategory === "all" ? "selected" : ""}
+            >
+              All Categories
+            </p>
+            <p
+              onClick={() => handleFilter("clothing")}
+              className={selectedCategory === "clothing" ? "selected" : ""}
+            >
+              Clothing
+            </p>
+            <p
+              onClick={() => handleFilter("food")}
+              className={selectedCategory === "food" ? "selected" : ""}
+            >
+              Food
+            </p>
+            <p
+              onClick={() => handleFilter("accessories")}
+              className={selectedCategory === "accessories" ? "selected" : ""}
+            >
+              Accessories
+            </p>
+            <p
+              onClick={() => handleFilter("tech")}
+              className={selectedCategory === "tech" ? "selected" : ""}
+            >
+              Tech
+            </p>
           </div>
         )}
       </div>
