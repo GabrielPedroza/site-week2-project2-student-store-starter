@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
             <div>
                 <HiOutlinePlus className="sign plus" onClick={(event) => { event.preventDefault(); addToCart(product); }}/>
               <div>
-                <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product); }} />
+                <HiOutlineMinus className="sign minus" onClick={(event) => { event.preventDefault(); removeFromCart(product.id); }} />
               </div>
             </div>
         </div>

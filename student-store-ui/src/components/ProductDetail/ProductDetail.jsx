@@ -39,8 +39,12 @@ const ProductDetail = () => {
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
       <div className="pd-signs">
-        <HiOutlinePlus className="pd-sign pd-plus" onClick={() => addToCart(product)} />
-        <HiOutlineMinus className="pd-sign pd-minus" onClick={() => removeFromCart(product.id)} />
+        <div className="pd-sign pd-plus" onClick={() => addToCart(product)}>
+          <HiOutlinePlus />
+        </div>
+        <div className="pd-sign pd-minus" onClick={() => removeFromCart(product.id)}>
+          <HiOutlineMinus />
+        </div>
       </div>
       <div className="pd-stars">
         <img src="/stars.png" alt="stars" />
