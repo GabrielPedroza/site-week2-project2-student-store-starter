@@ -68,6 +68,7 @@
   border: 1px solid white;
   padding: 10px;
   color: white;
+  text-align: right;
 }
 
 .payment-info {
