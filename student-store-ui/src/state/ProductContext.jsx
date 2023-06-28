@@ -29,9 +29,14 @@ export const ProductProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== productId);
-    setCartItems(updatedCart);
+    const updatedCart = cartItems.map((item) =>
+      item.id === productId
+        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 0 }
+        : item
+    );
+    setCartItems(updatedCart.filter((item) => item.quantity > 0));
   };
+  
 
   const contextValues = {
     filteredProducts,
@@ -41,6 +46,7 @@ export const ProductProvider = ({ children }) => {
     addToCart,
     setProducts,
     removeFromCart,
+    setCartItems,
     setFilteredProducts
   };
 
