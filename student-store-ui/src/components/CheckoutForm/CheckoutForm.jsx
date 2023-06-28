@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MdFactCheck } from "react-icons/md";
 import "./CheckoutForm.css"
 import Confetti from "../../utils/Confetti";
+import { ProductContext } from "../../state/ProductContext";
 
 const CheckoutForm = () => {
+  const { cartItems, setCartItems } = useContext(ProductContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,6 +30,7 @@ const CheckoutForm = () => {
       setErrorMessage("Please fill out the name and email fields.");
       return
     } else {
+      if (!cartItems.length) return setErrorMessage("You need items in the cart to checkout!")
       // Perform checkout logic here
       setErrorMessage("");
       console.log("Checkout successful!");
@@ -37,6 +40,7 @@ const CheckoutForm = () => {
     Confetti();
 
     setName("");
+    setCartItems([])
     setEmail("");
     setAgreeTerms(false);
   };
@@ -70,7 +74,7 @@ const CheckoutForm = () => {
           />
         </div>
         <div className="form-group">
-          {errorMessage && <p className="error-message">User info must include an email and name.</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <label className="checkbox-label">
             <input
               className="checkbox-input"
