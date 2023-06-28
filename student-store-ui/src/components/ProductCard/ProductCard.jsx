@@ -30,8 +30,13 @@ const ProductCard = ({ product }) => {
 }
 
 export function formatPrice(price) {
-	const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2)
-	return `$${formattedPrice}`;
+  const formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(price);
+
+  return formattedPrice;
 }
+
 
 export default ProductCard
