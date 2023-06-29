@@ -13,15 +13,17 @@ class Store {
     return this.data.products.find((product) => product.id === +productId);
   }
 
-  createPurchaseOrder(shoppingCart, user) {
-    // Validate input
-    // ...
+  getAllPurchases() {
+    return this.data.purchases;
+  }
 
-    // Calculate total and create purchase object
-    // ...
+  getPurchaseById(purchaseId) {
+    return this.data.purchases.find((purchase) => purchase.id == purchaseId);
+  }
 
-    // Save purchase to db.json
-    // ...
+  createPurchaseOrder(id, shoppingCart, email, total) {
+    const newPurchase = { id, shoppingCart, email, total };
+    this.data.purchases.push(newPurchase)
 
     return newPurchase;
   }

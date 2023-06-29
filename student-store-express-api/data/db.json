@@ -145,5 +145,40 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+    "id": 1,
+    "shoppingCart": [
+        {
+          "id": 16,
+          "name": "Smart Glasses",
+          "category": "tech",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Google_Glass_photo.JPG/330px-Google_Glass_photo.JPG",
+          "source": "https://en.wikipedia.org/wiki/Google_Glass",
+          "description": "Have the internet mounted to your face, and get the added benefit of looking silly all the time!",
+          "price": 999.99,
+          "quantity": 2
+        }
+      ],
+      "email": "gabe@codepath.org",
+      "total": 1999.98
+    },
+    {
+    "id": 2,
+    "shoppingCart": [
+        {
+          "id": 16,
+          "name": "Smart Glasses",
+          "category": "tech",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Google_Glass_photo.JPG/330px-Google_Glass_photo.JPG",
+          "source": "https://en.wikipedia.org/wiki/Google_Glass",
+          "description": "Have the internet mounted to your face, and get the added benefit of looking silly all the time!",
+          "price": 999.99,
+          "quantity": 2
+        }
+      ],
+      "email": "john@gmail.com",
+      "total": 1999.98
+    }
+]
 }

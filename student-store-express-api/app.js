@@ -18,5 +18,6 @@ app.use(cors({
 // Routes
 app.use("/store", require("./routes/store"));
 app.use("/products", require("./routes/products"));
+app.use("/purchases", require("./routes/purchases"));
 
 module.exports = app;
