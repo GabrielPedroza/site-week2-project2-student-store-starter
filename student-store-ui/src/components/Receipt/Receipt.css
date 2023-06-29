@@ -1,0 +1,31 @@
+.receipt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 420px;
+  }
+  
+.receipt {
+  background-color: #d4f7dc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.receipt-title {
+  margin-bottom: 20px;
+  color: #1d976c;
+}
+
+.success {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #1d976c;
+}
+
+.copy {
+  cursor: pointer;
+}
+  
