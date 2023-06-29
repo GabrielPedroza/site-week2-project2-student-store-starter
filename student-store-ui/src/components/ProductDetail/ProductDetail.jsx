@@ -5,6 +5,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 import axios from "axios";
 import "./ProductDetail.css";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
+import { formatPrice } from "../ProductCard/ProductCard";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -53,10 +54,5 @@ const ProductDetail = () => {
     </div>
   );
 };
-
-export function formatPrice(price) {
-  const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2);
-  return `$${formattedPrice}`;
-}
 
 export default ProductDetail;

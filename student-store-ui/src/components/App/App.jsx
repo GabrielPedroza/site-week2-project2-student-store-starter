@@ -52,7 +52,7 @@ export default function App() {
 						/>
 						<Route path="/purchases" element={<Purchases />} />
 						<Route
-							path="/purchases/:purchasesId"
+							path="/purchase/:purchaseId"
 							element={
 								<PurchaseID />
 							}

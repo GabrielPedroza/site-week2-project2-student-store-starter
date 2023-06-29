@@ -1,17 +1,21 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MdFactCheck } from "react-icons/md";
 import "./CheckoutForm.css"
 import Confetti from "../../utils/Confetti";
 import { ProductContext } from "../../state/ProductContext";
+import axios from "axios";
+import Receipt from "../Receipt/Receipt";
+
 
 const CheckoutForm = () => {
-  const { cartItems, setCartItems } = useContext(ProductContext);
+  const { cartItems: shoppingCart, setCartItems, total } = useContext(ProductContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false)
   const [errorMessage, setErrorMessage] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
-
+  const id = self.crypto.randomUUID()
+  
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -22,23 +26,30 @@ const CheckoutForm = () => {
 
   const handleCheckboxChange = () => {
     setAgreeTerms(!agreeTerms);
+    setSuccess(false)
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !email) {
       setErrorMessage("Please fill out the name and email fields.");
       return
     } else {
-      if (!cartItems.length) return setErrorMessage("You need items in the cart to checkout!")
+      if (!shoppingCart.length) return setErrorMessage("You need items in the cart to checkout!")
       // Perform checkout logic here
       setErrorMessage("");
-      console.log("Checkout successful!");
     }
-    
-    // order ID
-    const uuid = self.crypto.randomUUID();
+
+    const response = await axios.post('http://localhost:3001/purchases/makePurchase', {
+      id,
+      shoppingCart,
+      email,
+      total
+    });
+
+    if (response.status !== 201) return setErrorMessage("Oops! Something went wrong with your order. Reload the page and try again!")
+
 
     // Perform checkout logic here...
     Confetti();
@@ -52,6 +63,7 @@ const CheckoutForm = () => {
 
   return (
     <>
+    {success && !shoppingCart.length && <Receipt id={id} />}
       <div className="checkout-form-container">
         <h3 className="form-title">Checkout Form</h3>
         <form className="form" onSubmit={handleSubmit}>
@@ -108,9 +120,6 @@ const CheckoutForm = () => {
           </p>
         </div>
       </div>
-      {
-        success && <div className="success">YAYYYYY</div>
-      }
     </>
   );
 };
