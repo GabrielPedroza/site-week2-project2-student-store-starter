@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./ShoppingCart.css";
 import { ProductContext } from "../../state/ProductContext";
 import { RiMoneyDollarCircleLine } from "react-icons/ri"
 import { formatPrice } from "../ProductCard/ProductCard";
 
 const ShoppingCart = () => {
-  const { cartItems } = useContext(ProductContext);
+  const { cartItems, setTotal } = useContext(ProductContext);
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const taxes = subtotal * 0.1; // Assuming 10% tax rate
   const total = subtotal + taxes;
+
+  useEffect(() => {
+    setTotal(total)
+  }, [total])
+
 
   return (
     <div className="shopping-cart">
